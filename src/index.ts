@@ -1,7 +1,5 @@
-import app from './app';
-import {BASE_URL, PORT} from './config';
+import Server from "./server";
 
+const server = new Server();
 
-app.listen(PORT, () => {
-    console.log(`server listen on port -> ${PORT}\n${BASE_URL}${PORT}`);
-}) 
+server.start()

@@ -1,5 +1,11 @@
 import { z } from "zod";
 
+export const GetUserSchema = z.object({
+  params: z.object({
+    id: z.string().nonempty(),
+  }),
+});
+
 export const CreateUserSchema = z.object({
   body: z.object({
     username: z.string().nonempty().email({
@@ -30,5 +36,6 @@ export const UpdateUserSchema = z.object({
 });
 
 export type CreateUserType = z.infer<typeof CreateUserSchema>["body"];
+export type GetUserParamsType = z.infer<typeof GetUserSchema>["params"]
 export type UpdateUserBodyType = z.infer<typeof UpdateUserSchema>["body"];
-export type UpdateUserParamsType = z.infer<typeof UpdateUserSchema>["params"]
+export type UpdateUserParamsType = z.infer<typeof UpdateUserSchema>["params"];
