@@ -1,17 +1,28 @@
 import type { Request, Response, NextFunction } from "express";
 import { createUser } from "../services/user.service";
+import ValidationError from "../errors/ValidationError";
+import {
+  CreateUserType,
+  UpdateUserBodyType,
+  UpdateUserParamsType,
+} from "schemas/user.schema";
 
 const handleCreateUser = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
+  req: Request<unknown, unknown, CreateUserType>,
+  res: Response
 ) => {
-  const users = await createUser();
-  console.log(users);
-  if (users.length === 0) {
-    const err = new Error("no users");
-    next(err);
-  } else res.json(users);
+  const data = req.body;
+  await createUser(data);
+};
+
+const handleUpdateUserById = async (
+  req: Request<UpdateUserParamsType, unknown, UpdateUserBodyType>,
+  res: Response
+) => {
+  const id = +req.params.id;
+  const data = req.body;
+
+  await updateUserById(id, data);
 };
 
 export { handleCreateUser };
