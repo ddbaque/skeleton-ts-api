@@ -42,3 +42,52 @@ model User {
   password String 
 }
 ``` 
+
+### Migrate changes of DataBase
+When you create a new model or update an existing model, you should migrate your `schema.prisma`. For that use:
+```bash
+$ npm run prisma:migrate
+```
+
+### Prisma Studio
+With a simple tabular interface you can quickly have a look at the data of your local database and check if your app is working correctly.
+
+Interact with your Data with full CRUD functionality.
+
+View your data any way you want by filtering, sorting and paginating it. For that: 
+```bash
+$ npm run prisma:studio
+```
+
+## Build Project for Production
+To generate de code for deploying you can use:
+```bash
+$ npm run build
+```
+And execute the code for production with: 
+```bash
+$ npm start
+```
+
+## About Skeleton
+This TypeScript Express API skeleton provides a robust foundation for building scalable and maintainable RESTful APIs. Leveraging the power of TypeScript, Express, Prisma ORM, and Zod, this project offers an efficient and type-safe development environment.
+
+Features:
+
+1. TypeScript Language: Enjoy the benefits of static typing, enhanced code clarity, and reduced runtime errors, ensuring a safer and more productive development process.
+
+2. Express Framework: Utilize the popular Express framework to swiftly build a performant and scalable HTTP server, effortlessly handling incoming requests and responses.
+
+3. Prisma ORM: Seamlessly interact with databases using Prisma ORM, which simplifies database access, schema management, and migrations. Easily switch between various database providers, such as MySQL, PostgreSQL, and SQLite, to accommodate different deployment environments.
+
+4. Zod Data Validation: Ensure data integrity and reliability by integrating Zod, a powerful runtime validation library. Validate and sanitize incoming data, making the API more secure and robust against malicious inputs.
+
+
+
+
+
+
+
+
+
+

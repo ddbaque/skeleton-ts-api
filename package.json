@@ -1,7 +1,7 @@
 {
-  "name": "config",
+  "name": "david_baque",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript Express API with Prisma ORM and Zod Validation",
   "main": "index.js",
   "scripts": {
     "build:dev": "tsc -w",
@@ -13,7 +13,7 @@
     "prisma:studio": "prisma studio"
   },
   "keywords": [],
-  "author": "",
+  "author": "baquedavid0@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
